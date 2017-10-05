@@ -1,0 +1,6 @@
+drop table APT_BUILDING;
+drop table SUITES;
+drop table TENANT;
+create table APT_BUILDING (building_id int, name varchar(20), address varchar(20), zone int, primary key (building_id) );
+create table SUITES (suite_id int, building_id int, bedrooms int, rent int, occupied boolean, primary key (suite_id));
+create table TENANT (name varchar(20), suite_id int, year_of_birth int);

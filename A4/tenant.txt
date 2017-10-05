@@ -1,0 +1,14 @@
+Jaabb	745	1994
+Jaabb	749	1994
+Jaabb	761	1994
+Jaacc	752	1914
+Jaadd	760	1924
+Keebb	762	1934
+Keecc	770	1944
+Keedd	771	1954
+Liiff	773	1964
+Liigg	774	1974
+Liihh	780	1984
+Moojj	781	2004
+Mookk	782	2014
+Mooll	783	2000

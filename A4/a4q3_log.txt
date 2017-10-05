@@ -1,0 +1,103 @@
+MySQL [cmpt260_nlt895]> create table APT_BUILDING (building_id int, name varchar(20), address varchar(20), zone int, primary key (building_id) );
+Query OK, 0 rows affected (0.01 sec)
+
+MySQL [cmpt260_nlt895]> create table SUITES (suite_id int, building_id int, bedrooms int, rent int, occupied boolean, primary key (suite_id));
+Query OK, 0 rows affected (0.02 sec)
+
+MySQL [cmpt260_nlt895]> create table TENANT (name varchar(20), suite_id int, year_of_birth int);
+Query OK, 0 rows affected (0.00 sec)
+
+MySQL [cmpt260_nlt895]> SHOW TABLES; 
++--------------------------+
+| Tables_in_cmpt260_nlt895 |
++--------------------------+
+| APT_BUILDING             |
+| SUITES                   |
+| TENANT                   |
+| pet                      |
++--------------------------+
+4 rows in set (0.00 sec)
+
+MySQL [cmpt260_nlt895]> LOAD DATA LOCAL INFILE '/student/nlt895/CMPT260/apt.txt' INTO TABLE APT_BUILDING;
+Query OK, 0 rows affected, 7 warnings (0.00 sec)
+Records: 10  Deleted: 0  Skipped: 10  Warnings: 7
+
+MySQL [cmpt260_nlt895]> SELECT * FROM APT_BUILDING;
+
++-------------+-------------------+---------------------+------+
+| building_id | name              | address             | zone |
++-------------+-------------------+---------------------+------+
+|        1000 | smug towers       | 145 downtown st.    |    2 |
+|        1002 | skinny towers     | 150 downtown st.    |    2 |
+|        1004 | bigshot towers    | 175 downtown st.    |    2 |
+|        1006 | sutherland tower  | 100 sutherland ave. |    1 |
+|        1010 | middle manor      | 25 city part ave.   |    3 |
+|        1020 | midrise 2.0       | 35 city park ave.   |    3 |
+|        1030 | mid to good place | 45 city park st.    |    3 |
+|        1160 | slow towers       | 2 sutherland place  |    1 |
+|        1170 | lowrise manor     | 4 sutherland place  |    1 |
+|        1180 | tiny apt          | 6 sutherland St.    |    1 |
++-------------+-------------------+---------------------+------+
+10 rows in set (0.00 sec)
+
+MySQL [cmpt260_nlt895]> 
+MySQL [cmpt260_nlt895]> LOAD DATA LOCAL INFILE '/student/nlt895/CMPT260/suites.txt' INTO TABLE SUITES;
+Query OK, 23 rows affected (0.02 sec)
+Records: 23  Deleted: 0  Skipped: 0  Warnings: 0
+
+MySQL [cmpt260_nlt895]> SELECT * FROM SUITES;
++----------+-------------+----------+------+----------+
+| suite_id | building_id | bedrooms | rent | occupied |
++----------+-------------+----------+------+----------+
+|      745 |        1000 |        1 |  800 |        0 |
+|      746 |        1000 |        1 |  810 |        1 |
+|      747 |        1000 |        2 | 1000 |        0 |
+|      748 |        1002 |        2 | 1010 |        0 |
+|      749 |        1004 |        2 | 1020 |        1 |
+|      750 |        1010 |        1 |  750 |        0 |
+|      751 |        1020 |        2 |  950 |        0 |
+|      752 |        1020 |        1 |  400 |        1 |
+|      753 |        1020 |        2 | 1200 |        0 |
+|      754 |        1020 |        5 | 3000 |        0 |
+|      755 |        1030 |        2 | 1100 |        0 |
+|      760 |        1006 |        1 |  500 |        1 |
+|      761 |        1006 |        2 |  900 |        1 |
+|      762 |        1006 |        2 |  950 |        1 |
+|      770 |        1180 |        2 |  990 |        1 |
+|      771 |        1180 |        1 |  600 |        1 |
+|      772 |        1180 |        2 |  900 |        0 |
+|      773 |        1170 |        3 | 1100 |        1 |
+|      774 |        1170 |        2 | 1000 |        1 |
+|      780 |        1160 |        1 |  200 |        1 |
+|      781 |        1160 |        2 |  400 |        1 |
+|      782 |        1004 |        2 | 1100 |        1 |
+|      783 |        1004 |        2 | 1111 |        1 |
++----------+-------------+----------+------+----------+
+23 rows in set (0.00 sec)
+
+MySQL [cmpt260_nlt895]> LOAD DATA LOCAL INFILE '/student/nlt895/CMPT260/tenant.txt' INTO TABLE TENANT;
+Query OK, 14 rows affected (0.00 sec)
+Records: 14  Deleted: 0  Skipped: 0  Warnings: 0
+
+MySQL [cmpt260_nlt895]> SELECT * FROM TENANT;
++-------+----------+---------------+
+| name  | suite_id | year_of_birth |
++-------+----------+---------------+
+| Jaabb |      745 |          1994 |
+| Jaabb |      749 |          1994 |
+| Jaabb |      761 |          1994 |
+| Jaacc |      752 |          1914 |
+| Jaadd |      760 |          1924 |
+| Keebb |      762 |          1934 |
+| Keecc |      770 |          1944 |
+| Keedd |      771 |          1954 |
+| Liiff |      773 |          1964 |
+| Liigg |      774 |          1974 |
+| Liihh |      780 |          1984 |
+| Moojj |      781 |          2004 |
+| Mookk |      782 |          2014 |
+| Mooll |      783 |          2000 |
++-------+----------+---------------+
+14 rows in set (0.00 sec)
+
+MySQL [cmpt260_nlt895]> 

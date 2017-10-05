@@ -1,0 +1,10 @@
+1000	smug towers	145 downtown st.	2
+1002	skinny towers	150 downtown st.	2
+1004	bigshot towers	175 downtown st.	2
+1010	middle manor	25 city part ave.	3
+1020	midrise 2.0	35 city park ave.	3
+1030	mid to good place	45 city park st.	3
+1160	slow towers	2 sutherland place	1
+1170	lowrise manor	4 sutherland place	1
+1180	tiny apt	6 sutherland St.	1
+1006	sutherland tower	100 sutherland ave.	1
